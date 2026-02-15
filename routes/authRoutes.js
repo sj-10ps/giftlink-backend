@@ -26,16 +26,7 @@ router.post('/updateprofile',async(req,res,next)=>{
     }
 })
 
-router.get('/giftdetails/:id',async(req,res,next)=>{
-    try {
-   
-        const {id}=req.params
-        const data=await Giftmodel.findById(id)
-        return res.status(200).json(data)
-    } catch (error) {
-        next(error)
-    }
-})
+
 
 router.get('/comments/:id',async (req,res,next) => {
     try {
