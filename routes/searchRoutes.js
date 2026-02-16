@@ -4,14 +4,15 @@ router.get('/',async(req,res,next)=>{
     try {
         const {category,condition,name,year}=req.query
         let query={}
+        const numYear=Number(year)
         if(category&&category!=="All"){
              query.category=new RegExp(category,'i')
         }
         if(condition&&condition!=="All"){
             query.condition=new RegExp(condition,'i')
         }
-        if(year&&year>0){
-            query.year={$gte:0,$lte:Number(year)}
+        if(numYear&&numYear>0){
+            query.age_years={$gte:0,$lte:year}
         }
         if(name&&name.trim()!==""){
             query.$or=[
