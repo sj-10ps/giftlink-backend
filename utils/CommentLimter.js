@@ -15,7 +15,7 @@ const CommentLimiter=limiter({
          sendCommand:(...args)=>redisClient.sendCommand(args)   
     }),
     windowMs:15*60*1000,
-    max:5,
+    max:20,
     standardHeaders:true,
     handler:(req,res)=>{
         res.status(429).json({message:"too many attempts please try again later"})
