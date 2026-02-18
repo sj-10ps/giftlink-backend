@@ -6,7 +6,8 @@ const bcrypt=require('bcrypt')
 const Usermodel=require('../models/User')
 const jwt=require('jsonwebtoken')
 const loginLimiter = require('../utils/loginRatelimit')
-router.post('/register',loginLimiter,upload.none(),async(req,res,next)=>{
+router.post('/register',upload.none(),async(req,res,next)=>{
+    console.log("kjewbfhfbwfgwuifggu")
     const {firstname,lastname,email,password}=req.body
     try {
         const existing=await Usermodel.findOne({email:email})

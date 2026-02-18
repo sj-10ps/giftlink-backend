@@ -2,7 +2,7 @@ const limiter=require('express-rate-limit')
 const {createClient} = require('redis');
 const {RedisStore} = require('rate-limit-redis');
 const redisClient=createClient({
-    url: 'redis://sjps:sJ@123456@redis-13725.c85.us-east-1-2.ec2.cloud.redislabs.com:13725'
+    url:process.env.REDIS_URL
 })
 redisClient.connect().catch(console.error)
 
